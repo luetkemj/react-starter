@@ -10,14 +10,15 @@
     "reinstall": "npm run clean && npm install",
     "start": "./node_modules/.bin/nodemon --exec NODE_ENV=development ./node_modules/.bin/babel-node ./server/index.js",
     "lint": "eslint .",
+    "sass-lint": "sass-lint -c ./.sass-lint.yml './app/**/*.scss' -v -q -i './app/theme/vendor/**/*.scss'",
     "build:client": "NODE_ENV=production webpack --config ./webpack.config.js --progress --profile --colors",
     "build:server": "./node_modules/.bin/babel -d ./build ./server -s",
-    "build": "npm run lint && npm run clean:build && npm run build:server && npm run build:client",
+    "build": "npm run lint && npm run sass-lint && npm run clean:build && npm run build:server && npm run build:client",
     "production-build": "npm run build && npm run clean:node_modules && npm install --production",
     "production": "NODE_ENV=production node ./build/index.js",
     "test:mocha": "NODE_ENV=test ./node_modules/.bin/mocha --compilers js:babel-core/register --recursive test/**",
     "test:watch": "NODE_ENV=test ./node_modules/.bin/mocha --compilers js:babel-core/register --recursive --watch test/**",
-    "test": "npm run lint && npm run test:mocha"
+    "test": "npm run lint && npm run sass-lint && npm run test:mocha"
   },
   "dependencies": {
     "async": "1.5.2",
@@ -70,6 +71,7 @@
     "redux-mock-store": "1.0.2",
     "rewire": "2.5.1",
     "rimraf": "2.5.2",
+    "sass-lint": "1.7.0",
     "sass-loader": "3.2.0",
     "should": "8.3.1",
     "style-loader": "0.13.1",

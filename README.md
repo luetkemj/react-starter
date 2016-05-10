@@ -1,6 +1,6 @@
 # react-starter #
 
-The UI for React Starter
+Basic boilerplate for React with Redux, Webpack, CSS Modules, and Tests.
 
 ## Run the Application ##
 
