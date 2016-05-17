@@ -100,3 +100,15 @@ To only run the mocha tests, execute:
 To run the mocha tests in a "watch" mode:
 
 `$ npm run test:watch`
+
+## Test App ##
+
+A test application is available to test out components used within the main
+application. To run the test app, execute the following command:
+
+`$ npm run test-app`
+
+The contents of the test application are not included in the webpack bundle
+used in the main application. The `TEST_APP` environment variable is used
+to determine which application `index.js` file to use, which imports in the
+necessary files.
