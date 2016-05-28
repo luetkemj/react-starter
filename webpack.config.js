@@ -107,6 +107,7 @@ function getOutput() {
   if (IS_PRODUCTION) {
     output = {
       path: assetsPath,
+      publicPath,
       filename: '[name]-[hash].min.js',
     };
   } else {
