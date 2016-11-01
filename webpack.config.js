@@ -1,5 +1,6 @@
 // We need to 'use strict' here because this file isn't compiled with babel
 /* eslint strict:0 */
+
 'use strict';
 
 const webpack = require('webpack');
@@ -66,8 +67,8 @@ function getLoaders() {
       loader: 'style' +
               '!' +
               'css?modules' +
-                '&sourceMap' +
-                '&localIdentName=[local]___[hash:base64:5]' +
+              '&importLoaders=1' +
+              '&localIdentName=[path]___[name]__[local]___[hash:base64:5]' +
               '!' +
               'sass?outputStyle=expanded' +
                 '&sourceMap',
